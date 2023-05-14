@@ -64,6 +64,27 @@ public class AnimatedSpriteRenderer : MonoBehaviour
     }
     private void NextFrame()
     {
-
+        animationFrame++;
+        /// <summary>
+        /// Kiểm tra xem loop và khung hình chuyển động >= độ dài sprites
+        /// </summary>
+        if (loop && animationFrame >= animationSprites.Length)
+        {
+            animationFrame = 0;
+        }
+        /// <summary>
+        /// Nếu sprites ở trạng thái nhàn rỗi (idle)
+        /// </summary>
+        if (idle)
+        {
+            spriteRenderer.sprite = idleSprites;
+        }
+        /// <summary>
+        /// Check điều kiện
+        /// </summary>
+        else if (animationFrame >= 0 && animationFrame < animationSprites.Length)
+        {
+            spriteRenderer.sprite = animationSprites[animationFrame];
+        }
     }
 }
