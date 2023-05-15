@@ -28,6 +28,10 @@ namespace io.lockedroom.Games.Bomberman2 {
         /// </summary>
         public BombExplosion explosionPrefab;
         /// <summary>
+        /// Lớp nổ bom
+        /// </summary>
+        public LayerMask explosionLayerMask;
+        /// <summary>
         /// Thời gian hiệu ứng nổ tồn tại
         /// </summary>
         public float explosionDuration = 1f;
@@ -91,6 +95,10 @@ namespace io.lockedroom.Games.Bomberman2 {
                 return;
             }
             position += direction;
+            // Ktra nếu gặp vật cản thì hiệu ứng bom nổ dừng lại
+            if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask)) {
+                return;
+            }
             BombExplosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
             // Xét điều kiện
             explosion.SetActiveRenderer(length > 1 ? explosion.middle : explosion.end);

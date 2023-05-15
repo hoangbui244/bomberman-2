@@ -31,7 +31,7 @@ namespace io.lockedroom.Games.Bomberman2 {
         public void SetDirection(Vector2 direction) {
             // xoay hướng bomb nổ
             float angle = Mathf.Atan2(direction.y, direction.x);
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
         }
         /// <summary>
         /// Hàm xóa gameObject (Làm gọn code)
