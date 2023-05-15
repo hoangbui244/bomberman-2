@@ -3320,6 +3320,10 @@ MonoBehaviour:
   inputDown: 115
   inputLeft: 97
   inputRight: 100
+  spriteRendererUp: {fileID: 1019943424}
+  spriteRendererDown: {fileID: 284255083}
+  spriteRendererLeft: {fileID: 2011720822}
+  spriteRendererRight: {fileID: 1847453122}
 --- !u!1 &2011720819
 GameObject:
   m_ObjectHideFlags: 0
