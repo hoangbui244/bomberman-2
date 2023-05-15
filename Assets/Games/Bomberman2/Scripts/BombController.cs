@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+
 namespace io.lockedroom.Games.Bomberman2 {
     public class BombController : MonoBehaviour {
+        [Header("Bomb")]
         /// <summary>
         /// Khởi tạo GameObject bombPrefab
         /// </summary>
@@ -23,6 +26,7 @@ namespace io.lockedroom.Games.Bomberman2 {
         /// Số lượng bomb còn lại
         /// </summary>
         private int bombsRemaining;
+        [Header("Explosion")]
         /// <summary>
         /// Prefab
         /// </summary>
@@ -40,6 +44,15 @@ namespace io.lockedroom.Games.Bomberman2 {
         /// Khi nhặt PowerUp thì phạm vi tăng
         /// </summary>
         public int explosionRadius = 1;
+        [Header("Destrutible")]
+        /// <summary>
+        /// Tilemap
+        /// </summary>
+        public Tilemap destructibleTiles;
+        /// <summary>
+        /// Prefab
+        /// </summary>
+        public Destructible destructiblePrefab;
         /// <summary>
         /// Hàm OnEnable để kích hoạt số bomb còn lại bằng số lượng bomb
         /// </summary>
@@ -97,6 +110,7 @@ namespace io.lockedroom.Games.Bomberman2 {
             position += direction;
             // Ktra nếu gặp vật cản thì hiệu ứng bom nổ dừng lại
             if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask)) {
+                ClearDestructible(position);
                 return;
             }
             BombExplosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
@@ -106,6 +120,18 @@ namespace io.lockedroom.Games.Bomberman2 {
             explosion.DestroyAfter(explosionDuration);
             // Gọi hàm Explode với position mới
             Explode(position, direction, length - 1);
+        }
+        /// <summary>
+        /// Hàm để dọn sạch cấu trúc sau khi phá
+        /// </summary>
+        private void ClearDestructible(Vector2 position) {
+            Vector3Int cell = destructibleTiles.WorldToCell(position);
+            TileBase title = destructibleTiles.GetTile(cell);
+            // Nếu title khác null thì khởi tạo destructiblePrefab vào vị trí đó
+            if (title != null) {
+                Instantiate(destructiblePrefab, position, Quaternion.identity);
+                destructibleTiles.SetTile(cell, null);
+            }
         }
         /// <summary>
         /// Sau khi đặt bomb và ra khỏi quả bomb thì có thể tác động physic
