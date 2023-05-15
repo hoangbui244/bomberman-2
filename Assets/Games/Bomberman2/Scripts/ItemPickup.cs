@@ -22,7 +22,7 @@ public class ItemPickup : MonoBehaviour {
                 //..
                 break;
             case ItemType.ExtraBomb:
-                //..
+                player.GetComponent<BombController>().explosionRadius++;
                 break;
             case ItemType.SpeedUp:
                 player.GetComponent<MovementController>().speed++;
