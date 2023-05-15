@@ -134,6 +134,13 @@ namespace io.lockedroom.Games.Bomberman2 {
             }
         }
         /// <summary>
+        /// Khi nhặt item ExtraBomb thì tăng BombAmount và BombRemaining
+        /// </summary>
+        public void AddBomb() {
+            bombAmount++;
+            bombsRemaining++;
+        }
+        /// <summary>
         /// Sau khi đặt bomb và ra khỏi quả bomb thì có thể tác động physic
         /// </summary>
         private void OnTriggerExit2D(Collider2D other) {
