@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using io.lockedroom.Games.Bomberman2;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +25,7 @@ public class ItemPickup : MonoBehaviour {
                 //..
                 break;
             case ItemType.SpeedUp:
-                //..
+                player.GetComponent<MovementController>().speed++;
                 break;
         }
         Destroy(gameObject);
