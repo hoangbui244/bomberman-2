@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6520401076890037112}
   - component: {fileID: 8382872030314816032}
   - component: {fileID: 8438819276373653336}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Destructible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructionTime: 1
-  itemSpawnChance: 0.635
+  itemSpawnChance: 0.2
   spawnableItems:
   - {fileID: 2300916539721845829, guid: 25267b13121249f48b9843b795ae36fe, type: 3}
   - {fileID: 812200141290193501, guid: 8af8cb1bb117436438e7e877292c48b3, type: 3}

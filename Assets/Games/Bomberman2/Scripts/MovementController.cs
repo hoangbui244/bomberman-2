@@ -29,6 +29,7 @@ namespace io.lockedroom.Games.Bomberman2 {
         public AnimatedSpriteRenderer spriteRendererDown;
         public AnimatedSpriteRenderer spriteRendererLeft;
         public AnimatedSpriteRenderer spriteRendererRight;
+        public AnimatedSpriteRenderer spriteRendererDeath;
         /// <summary>
         /// Dùng để ktra xem hiện tại Sprite nào đang được kích hoạt
         /// </summary>
@@ -92,6 +93,35 @@ namespace io.lockedroom.Games.Bomberman2 {
             /// nếu sprite hiện tại là idle thì hướng đứng yên
             activeSpritesRenderer = spriteRenderer;
             activeSpritesRenderer.idle = direction == Vector2.zero;
+        }
+        /// <summary>
+        /// Nếu ng chơi đi vào bom nổ thì die
+        /// </summary>
+        private void OnTriggerEnter2D(Collider2D other) {
+            // Ktra với tag Player
+            if (other.gameObject.layer == LayerMask.NameToLayer("Explosion")) {
+                DeathSequence();
+            }
+        }
+        /// <summary>
+        /// Khi người chơi thua
+        /// </summary>
+        private void DeathSequence() {
+            // Khi người chơi thua thì disable hành động, hoạt ảnh,...
+            enabled = false;
+            GetComponent<BombController>().enabled = false;
+            spriteRendererDown.enabled= false;
+            spriteRendererUp.enabled= false;
+            spriteRendererLeft.enabled= false;
+            spriteRendererRight.enabled= false;
+            spriteRendererDeath.enabled= true;
+            Invoke(nameof(OnDeathSequenceEnded), 1.25f);
+        }
+        /// <summary>
+        /// Khi người chơi thua
+        /// </summary>
+        private void OnDeathSequenceEnded() {
+            gameObject.SetActive(false);
         }
     }
 }

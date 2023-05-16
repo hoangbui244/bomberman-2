@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2805654863336796027}
   - component: {fileID: 2605819004726085837}
   - component: {fileID: 5087956160554090548}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ItemBlastRadius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856ab2b268e84b440ae3b7411461e194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
