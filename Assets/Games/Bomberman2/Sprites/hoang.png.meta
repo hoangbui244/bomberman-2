@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: f39eb39f0c3ce9a4bb7946179c723d45
+guid: 847a9fb0fd06c7b4eabdbf79f9054872
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1021033904768952681
-    second: enemy_1
+      213: -1826644750744451303
+    second: hoang_0
   - first:
-      213: 4923296369956368163
-    second: enemy_2
+      213: 3146782913613076439
+    second: hoang_1
   - first:
-      213: 7804114503538825880
-    second: enemy_3
+      213: 9005560342716311656
+    second: hoang_2
   - first:
-      213: -8887922994130184162
-    second: enemy_4
+      213: 5455355551274215561
+    second: hoang_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,85 +103,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy_1
+      name: hoang_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 721
-        width: 16
+        x: 0
+        y: 0
+        width: 17
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 969226d3de07b2e00800000000000000
-      internalID: 1021033904768952681
+      spriteID: 9178b05f64476a6e0800000000000000
+      internalID: -1826644750744451303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_2
+      name: hoang_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 721
-        width: 16
+        x: 21
+        y: 0
+        width: 17
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32f2837b6ff035440800000000000000
-      internalID: 4923296369956368163
+      spriteID: 7d71d27336e9bab20800000000000000
+      internalID: 3146782913613076439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_3
+      name: hoang_2
       rect:
         serializedVersion: 2
-        x: 36
-        y: 721
-        width: 16
+        x: 43
+        y: 0
+        width: 17
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89ad7e10bc8cd4c60800000000000000
-      internalID: 7804114503538825880
+      spriteID: 86863fe0b6d2afc70800000000000000
+      internalID: 9005560342716311656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_4
+      name: hoang_3
       rect:
         serializedVersion: 2
-        x: 53
-        y: 721
-        width: 16
+        x: 64
+        y: 0
+        width: 17
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1818d78021c7a480800000000000000
-      internalID: -8887922994130184162
+      spriteID: 988a72d58f055bb40800000000000000
+      internalID: 5455355551274215561
       vertices: []
       indices: 
       edges: []
