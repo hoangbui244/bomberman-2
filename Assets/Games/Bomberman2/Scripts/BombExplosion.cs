@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 namespace io.lockedroom.Games.Bomberman2 {
-
     public class BombExplosion : MonoBehaviour {
         /// <summary>
         /// hoạt ảnh bomb render (start)

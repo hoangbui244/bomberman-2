@@ -122,6 +122,7 @@ namespace io.lockedroom.Games.Bomberman2 {
         /// </summary>
         private void OnDeathSequenceEnded() {
             gameObject.SetActive(false);
+            FindObjectOfType<GameManager>().CheckWinState();
         }
     }
 }

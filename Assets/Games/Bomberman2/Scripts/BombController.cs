@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
 namespace io.lockedroom.Games.Bomberman2 {
     public class BombController : MonoBehaviour {
         [Header("Bomb")]
