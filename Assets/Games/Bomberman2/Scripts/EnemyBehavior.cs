@@ -19,25 +19,33 @@ namespace io.lockedroom.Games.Bomberman2 {
         /// </summary>
         public float speed = 2f;
         public SpriteRenderer spriteRenderer;
+        public BoxCollider2D boxCollider;
         /// <summary>
         /// Nhận component
         /// </summary>
         private void Awake() {
             rigidbody = GetComponent<Rigidbody2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
+            boxCollider = GetComponent<BoxCollider2D>();
         }
         /// <summary>
         /// Update vận tốc di chuyển của enemy
         /// </summary>
         private void Update() {
-            rigidbody.velocity = direction * speed;
-        }
-        /// <summary>
-        /// So sánh nếu gặp tường thì đổi hướng ngẫu nhiên
-        /// </summary>
-        private void OnCollisionEnter2D(Collision2D collision) {
-            if (collision.collider.CompareTag("Wall")) {
+            Vector2 futurePos = (Vector2)transform.position + direction * speed * Time.deltaTime;
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(futurePos + boxCollider.offset, boxCollider.size * 0.9f, 0);
+            bool shouldChangeDirection = false;
+            foreach (Collider2D collider in colliders) {
+                if (collider.gameObject != gameObject) {
+                    shouldChangeDirection = true;
+                    break;
+                }
+            }
+            if (shouldChangeDirection) {
                 ChangeDirectionRandomly();
+            }
+            else {
+                transform.position = futurePos;
             }
         }
         /// <summary>
@@ -47,6 +55,7 @@ namespace io.lockedroom.Games.Bomberman2 {
             Vector2[] possibleDirections = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
             int randomIndex = Random.Range(0, possibleDirections.Length);
             direction = possibleDirections[randomIndex];
+            Debug.Log(direction);
         }
     }
 }
