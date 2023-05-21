@@ -98,7 +98,7 @@ namespace io.lockedroom.Games.Bomberman2 {
         /// Nếu ng chơi đi vào bom nổ thì die
         /// </summary>
         private void OnTriggerEnter2D(Collider2D other) {
-            // Ktra với tag Player
+            // Ktra điều kiện với layer Explosion
             if (other.gameObject.layer == LayerMask.NameToLayer("Explosion")) {
                 DeathSequence();
             }

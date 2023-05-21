@@ -29,7 +29,7 @@ namespace io.lockedroom.Games.Bomberman2 {
             boxCollider = GetComponent<BoxCollider2D>();
         }
         /// <summary>
-        /// Update vận tốc di chuyển của enemy
+        /// Tính trước vị trí tương lai và check collider để chuyển hướng
         /// </summary>
         private void Update() {
             Vector2 futurePos = (Vector2)transform.position + direction * speed * Time.deltaTime;
@@ -55,7 +55,21 @@ namespace io.lockedroom.Games.Bomberman2 {
             Vector2[] possibleDirections = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
             int randomIndex = Random.Range(0, possibleDirections.Length);
             direction = possibleDirections[randomIndex];
-            Debug.Log(direction);
+        }
+        /// <summary>
+        /// Nếu quái chơi đi vào bom nổ thì die
+        /// </summary>
+        private void OnTriggerEnter2D(Collider2D other) {
+            // Ktra điều kiện với layer Explosion
+            if (other.gameObject.layer == LayerMask.NameToLayer("Explosion")) {
+                EnemyDeathSequence();
+            }
+        }
+        /// <summary>
+        /// Hàm xử lý khi quái va chạm vào bom
+        /// </summary>
+        private void EnemyDeathSequence() {
+            Destroy(gameObject);
         }
     }
 }
