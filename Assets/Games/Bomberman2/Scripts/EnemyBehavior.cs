@@ -57,7 +57,7 @@ namespace io.lockedroom.Games.Bomberman2 {
             direction = possibleDirections[randomIndex];
         }
         /// <summary>
-        /// Nếu quái chơi đi vào bom nổ thì die
+        /// Nếu quái chơi đi vào phạm vi bom nổ thì die
         /// </summary>
         private void OnTriggerEnter2D(Collider2D other) {
             // Ktra điều kiện với layer Explosion

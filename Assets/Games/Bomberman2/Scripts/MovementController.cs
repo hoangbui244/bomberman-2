@@ -95,6 +95,14 @@ namespace io.lockedroom.Games.Bomberman2 {
             activeSpritesRenderer.idle = direction == Vector2.zero;
         }
         /// <summary>
+        /// Nếu  người chơi chạm vào Enemy thì thua
+        /// </summary>
+        private void OnCollisionEnter2D(Collision2D collision) {
+            if (collision.gameObject.CompareTag("Enemy")) {
+                DeathSequence();
+            }
+        }
+        /// <summary>
         /// Nếu ng chơi đi vào bom nổ thì die
         /// </summary>
         private void OnTriggerEnter2D(Collider2D other) {
